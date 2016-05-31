@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.cary.cwish.pojo.User;
 import com.cary.cwish.service.IUserService;
 
-import cary.TestMyBatis;
-
 @Controller  
 @RequestMapping("/user")  
 public class UserController {  

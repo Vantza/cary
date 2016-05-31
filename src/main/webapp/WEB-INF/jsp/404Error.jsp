@@ -7,6 +7,6 @@
 <title>400ERROR</title>
 </head>
 <body>
-	<h1>I have no idea about 400 error.(innocent face)</h1>
+	<h1>I have no idea about 404 error.(innocent face)</h1>
 </body>
 </html>
