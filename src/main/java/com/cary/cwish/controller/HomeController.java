@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/home")
 public class HomeController {
-	@RequestMapping("/homePage")
+	@RequestMapping(value= "/")
 	public String getHomePage(HttpServletRequest request, Model model){
 		return "HomePage";
 	}

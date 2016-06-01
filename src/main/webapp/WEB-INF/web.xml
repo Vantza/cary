@@ -48,8 +48,12 @@
 		<!-- 此处可以可以配置成*.do，对应struts的后缀习惯 -->
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+        <servlet-name>SpringMVC</servlet-name>
+        <url-pattern>/cary</url-pattern>
+  	</servlet-mapping>
 	<welcome-file-list>
-		<welcome-file>/index.jsp</welcome-file>
+		<welcome-file>/WEB-INF/jsp/HomePage</welcome-file>
 	</welcome-file-list>
 	<error-page>
 		<error-code>404</error-code>
@@ -59,5 +63,5 @@
 		<error-code>500</error-code>
 		<location>/WEB-INF/jsp/500Error.jsp</location>
 	</error-page>
-
+	
 </web-app>

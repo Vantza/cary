@@ -20,10 +20,10 @@
 						 <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a> <a href="#" class="brand">Cary</a>
 						<div class="nav-collapse collapse navbar-responsive-collapse">
 							<ul class="nav">
-								<li class="active">
+								<li>
 									<a href="/cary/home/">主页</a>
 								</li>
-								<li>
+								<li class="active">
 									<a href="/cary/write/">写字</a>
 								</li>
 								<li>
