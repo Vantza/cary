@@ -57,7 +57,7 @@
 							</ul>
 							<ul class="nav pull-right">
 								<li>
-									<a href="#">右边链接</a>
+									<a href="#">${user1.userName}aaa${user.userName}</a>
 								</li>
 								<li class="divider-vertical">
 								</li>
