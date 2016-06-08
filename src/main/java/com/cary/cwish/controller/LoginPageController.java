@@ -1,7 +1,9 @@
 package com.cary.cwish.controller;
 
 import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
@@ -11,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.cary.cwish.pojo.User;
 import com.cary.cwish.service.UserService;
+import com.cary.cwish.utils.MathUtils;
 
 @Controller
 @RequestMapping(value="/loginPage")
@@ -26,16 +29,34 @@ public class LoginPageController {
 	}
 	
 	@RequestMapping(value="/login")
-	public ModelAndView login(HttpServletRequest request, Model model) throws Exception{
+	public ModelAndView login(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception{
 		
 		ModelAndView mav = new ModelAndView("HomePage");
+		Cookie accountCookie = null;
+		Cookie ssidCookie = null;
+		
 		try{
 			String userName = request.getParameter("user_name").toString();
 			String password = request.getParameter("user_pwd").toString();
+			String md5Str;
         	User user = this.userService.getUserByName(userName);
         	if (user != null) {
         		if (password.equals(user.getPassword())) {
-        			mav.addObject("user", user);
+        			mav.addObject("account", user);
+        			/*
+        			 * Add user_name and KEY to cookie
+        			 */
+        			md5Str = userName.trim().toUpperCase() + MathUtils.KEY;
+        			logger.info("md5 : " + MathUtils.MD5(md5Str));
+        			ssidCookie = new Cookie("ssid", MathUtils.MD5(md5Str));
+        			ssidCookie.setMaxAge(60*60*1);
+        			
+        			accountCookie = new Cookie("account", userName);
+        			accountCookie.setMaxAge(60*60*1);
+        			
+        			response.addCookie(ssidCookie);
+        			response.addCookie(accountCookie);
+        			
         			logger.info("Get the correct user info, return to HomePage");
         			return mav;
         		} else {
