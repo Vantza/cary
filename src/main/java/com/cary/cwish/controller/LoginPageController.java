@@ -50,9 +50,12 @@ public class LoginPageController {
         			logger.info("md5 : " + MathUtils.MD5(md5Str));
         			ssidCookie = new Cookie("ssid", MathUtils.MD5(md5Str));
         			ssidCookie.setMaxAge(60*60*1);
+        			// 设置Path为'/'以确保在域名下所有路径都可以访问到该cookie
+        			ssidCookie.setPath("/");
         			
         			accountCookie = new Cookie("account", userName);
         			accountCookie.setMaxAge(60*60*1);
+        			accountCookie.setPath("/");
         			
         			response.addCookie(ssidCookie);
         			response.addCookie(accountCookie);
