@@ -148,4 +148,16 @@
       date = #{date,jdbcType=TIMESTAMP}
     where article_id = #{articleId,jdbcType=INTEGER}
   </update>
+  <select id="selectArticleCount" resultType="java.lang.Integer" >
+    select count(*)
+    from user_article
+  </select>
+  <select id="selectByPrimaryKeyInLimit" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from user_article
+    limit #{startNum,jdbcType=INTEGER}, 10
+  </select>
 </mapper>

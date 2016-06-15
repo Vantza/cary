@@ -1,5 +1,7 @@
 package com.cary.cwish.dao;
 
+import java.util.List;
+
 import com.cary.cwish.pojo.Article;
 
 public interface ArticleDao {
@@ -58,4 +60,14 @@ public interface ArticleDao {
      * @mbggenerated
      */
     int updateByPrimaryKey(Article record);
+    
+    /**
+     * get article count from database
+     */
+    int selectArticleCount();
+    
+    /**
+     * get 10 record from one selection
+     */
+    List<Article> selectByPrimaryKeyInLimit(Integer startNum);
 }

@@ -1,5 +1,7 @@
 package cary;
 
+import java.util.List;
+
 import javax.annotation.Resource;  
 
 import org.apache.log4j.Logger;  
@@ -9,7 +11,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;  
   
 import com.alibaba.fastjson.JSON;
-import com.cary.cwish.dao.ArticleDao;
 import com.cary.cwish.pojo.Article;
 import com.cary.cwish.pojo.User;
 import com.cary.cwish.service.ArticleService;
@@ -24,12 +25,11 @@ public class TestMyBatis {
     private UserService userService = null;
     @Resource
     private ArticleService articleService = null;
-    private ArticleDao dao = null;
     
     
     @Test  
-    public void test1() throws Exception {
-    	logger.info("get in test1");
+    public void testGetUserById() throws Exception {
+    	logger.info("get in testGetUserById");
         User user = userService.getUserById(1);  
         // System.out.println(user.getUserName());  
         // logger.info("用户名"+user.getUserName());  
@@ -37,12 +37,28 @@ public class TestMyBatis {
     }
     
     @Test
-    public void test2() throws Exception {
+    public void testGetArticleById() throws Exception {
 
-    	logger.info("get in test2");
+    	logger.info("get in testGetArticleById");
     	Article art = articleService.getArticleById(1);
 //    	Article art = dao.selectByPrimaryKey(1);
     	logger.info(JSON.toJSONString(art));
+    }
+    
+    @Test
+    public void testGetArticleCount() throws Exception {
+    	logger.info("get in testGetArticleCount");
+    	int count = articleService.getArticleCount();
+    	logger.info(JSON.toJSONString(count));
+    }
+    
+    @Test
+    public void testGetArticles() throws Exception {
+    	logger.info("get in testGetArticles");
+    	List<Article> arts = articleService.getArticles(0);
+    	for(Article a : arts) {
+    		logger.info(JSON.toJSONString(a));
+    	}
     }
     
 }  
