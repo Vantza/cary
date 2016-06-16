@@ -1,3 +1,4 @@
 /target/
 
 logs/ssm.log
+/logs/ssm.log
