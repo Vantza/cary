@@ -61,6 +61,8 @@ public class LoginPageController {
         			response.addCookie(accountCookie);
         			
         			logger.info("Get the correct user info, return to HomePage");
+        			mav.setViewName("redirect:/home/");
+        			logger.info("Redirect to home page");
         			return mav;
         		} else {
         			mav.setViewName("LoginPage");
