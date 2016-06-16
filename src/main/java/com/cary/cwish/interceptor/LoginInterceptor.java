@@ -29,7 +29,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 		 */
 		String acc = null;
 		String ssid = null;
-		logger.info("cookie length : "+req.getCookies().length);
+//		logger.info("cookie length : "+req.getCookies().length);
 		if (req.getCookies() != null){
 			for (Cookie c : req.getCookies()) {
 				if (c.getName().equals("account")) {
