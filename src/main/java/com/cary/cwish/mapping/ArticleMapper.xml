@@ -158,6 +158,7 @@
     ,
     <include refid="Blob_Column_List" />
     from user_article
+    order by date desc
     limit #{startNum,jdbcType=INTEGER}, 10
   </select>
   <insert id="insertArticleRecord" parameterType="com.cary.cwish.pojo.Article" >
