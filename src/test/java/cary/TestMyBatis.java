@@ -61,4 +61,14 @@ public class TestMyBatis {
     	}
     }
     
+    @Test
+    public void testInsertArticle() throws Exception {
+    	logger.info("get in testInsertArticle");
+    	Article article = new Article();
+    	article.setTitle("This is an amazing story!!");
+    	article.setText("What a pity! I do not know what the story tells..");
+    	article.setUserName("Wulala");
+    	int recordCount = articleService.insertArticle(article);
+    	logger.info(recordCount);
+    }
 }  

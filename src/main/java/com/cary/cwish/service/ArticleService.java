@@ -10,4 +10,6 @@ public interface ArticleService {
 	public int getArticleCount() throws Exception;
 	
 	public List<Article> getArticles(int startNum) throws Exception;
+	
+	public int insertArticle(Article article) throws Exception;
 }

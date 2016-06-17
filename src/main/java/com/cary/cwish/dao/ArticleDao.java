@@ -70,4 +70,9 @@ public interface ArticleDao {
      * get 10 record from one selection
      */
     List<Article> selectByPrimaryKeyInLimit(Integer startNum);
+    
+    /**
+     * insert into user_article one record
+     */
+    int insertArticleRecord(Article record);
 }

@@ -160,4 +160,9 @@
     from user_article
     limit #{startNum,jdbcType=INTEGER}, 10
   </select>
+  <insert id="insertArticleRecord" parameterType="com.cary.cwish.pojo.Article" >
+    insert into user_article (user_name, title, date, text)
+    values (#{userName,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
+      #{date,jdbcType=TIMESTAMP}, #{text,jdbcType=LONGVARCHAR})
+  </insert>
 </mapper>

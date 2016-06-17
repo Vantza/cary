@@ -34,4 +34,10 @@ public class ArticleServiceImpl implements ArticleService {
 		return articleDao.selectByPrimaryKeyInLimit(startNum);
 	}
 
+	@Override
+	public int insertArticle(Article article) throws Exception {
+		logger.info("get in insert article service");
+		return articleDao.insertArticleRecord(article);
+	}
+
 }
