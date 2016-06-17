@@ -101,15 +101,14 @@
 				<div class="col-md-8 col-md-offset-2"><a href=""><%=art.getTitle()%></a></div>
 			</div>
 			<div class="row-fluid">
-				<div class="col-md-8 col-md-offset-2">-----------------------------------------------------------------------------------------------------
-				</div>
+				<hr class="col-md-8 col-md-offset-2" />
 			</div>
 			<div class="row-fluid">
 				<div class="col-md-8 col-md-offset-2"><%=art.getText()%></div>
 			</div>
 			<br/>
 			<div class="row-fluid">
-				<div class="col-md-8 col-md-offset-2">=============================================文章分割线=============================================</div>
+				<hr style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" color=#555666 SIZE=5 class="col-md-8 col-md-offset-2">
 			</div>
 			<br/>
 		</div>
