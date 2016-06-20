@@ -31,6 +31,7 @@ public class WritePageController {
 		ModelAndView mav = new ModelAndView("WritePage");
 		Article art = new Article();
 		logger.info("get in submit function");
+		logger.info("Encoding is :" + req.getCharacterEncoding());
 		String text = req.getParameter("editor");
 		String title = req.getParameter("title");
 		String userName = null;

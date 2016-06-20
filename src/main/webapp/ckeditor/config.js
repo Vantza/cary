@@ -11,4 +11,5 @@ CKEDITOR.editorConfig = function( config ) {
 	config.height = 500;
 	config.fontSize_defaultLabel = '12px';
 	config.font_defaultLabel = 'Arial';
+	config.language = 'zh-cn';
 };
