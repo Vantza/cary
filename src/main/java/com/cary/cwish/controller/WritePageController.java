@@ -1,5 +1,7 @@
 package com.cary.cwish.controller;
 
+import java.io.IOException;
+
 import javax.annotation.Resource;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -27,8 +29,7 @@ public class WritePageController {
 	}
 	
 	@RequestMapping(value="/submit")
-	public ModelAndView onSubmit(HttpServletRequest req, HttpServletResponse res) {
-		ModelAndView mav = new ModelAndView("WritePage");
+	public void onSubmit(HttpServletRequest req, HttpServletResponse res) {
 		Article art = new Article();
 		logger.info("get in submit function");
 		logger.info("Encoding is :" + req.getCharacterEncoding());
@@ -48,11 +49,11 @@ public class WritePageController {
 		art.setUserName(userName);
 		try {
 			articleService.insertArticle(art);
+			res.sendRedirect("/cary/home/");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		logger.info("text is : " + text);
 		logger.info("title is :" + title);
-		return mav;
 	}
 }

@@ -92,7 +92,7 @@
 <div class="container-fluid">
 	<div class="row-fluid">
 		<div class="col-md-8 col-md-offset-2">
-			<form action="" method="post">
+			<form action="" method="post" role="form">
 		        <input type="text" class="form-control" id="title" name="title" placeholder="请输入标题" required="">
 				<textarea name="editor"></textarea>
 				<script type="text/javascript">CKEDITOR.replace('editor');</script>
@@ -103,7 +103,6 @@
 				function onSubmit(){
 					// check if the title is empty
 					if (!jQuery.isEmptyObject($('#title').val())) {
-						alert("get in!!")
 						// Blow is important if CKEditor in form.
 						for ( instance in CKEDITOR.instances ) 
 							CKEDITOR.instances[instance].updateElement(); 
