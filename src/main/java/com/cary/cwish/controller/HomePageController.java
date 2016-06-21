@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.cary.cwish.pojo.Article;
 import com.cary.cwish.service.ArticleService;
+import com.cary.cwish.utils.WishConstant;
 
 @Controller
 @RequestMapping("/home")
@@ -23,7 +24,7 @@ public class HomePageController {
 	
 	@RequestMapping(value= "/")
 	public ModelAndView getHomePage(HttpServletRequest request, Model model){
-		ModelAndView mav = new ModelAndView("HomePage");
+		ModelAndView mav = new ModelAndView(WishConstant.HOMEPAGE);
 		try {
 			int articleCount = articleService.getArticleCount();
 
@@ -34,6 +35,7 @@ public class HomePageController {
 			}
 			mav.addObject("articles", articles);
 			mav.addObject("articleCount", articleCount);
+			mav.addObject("page", WishConstant.HOMEPAGE);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

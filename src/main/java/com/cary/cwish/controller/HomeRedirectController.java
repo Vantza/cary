@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.cary.cwish.pojo.Article;
 import com.cary.cwish.service.ArticleService;
+import com.cary.cwish.utils.WishConstant;
 
 @Controller
 @RequestMapping(value={"/"})
@@ -34,6 +35,7 @@ public class HomeRedirectController {
 			}
 			mav.addObject("articles", articles);
 			mav.addObject("articleCount", articleCount);
+			mav.addObject("page", WishConstant.HOMEPAGE);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
