@@ -18,7 +18,7 @@ public class ArticleServiceImpl implements ArticleService {
 	private ArticleDao articleDao;
 
 	public Article getArticleById(int articleId) throws Exception {
-		logger.info("get in Article Service to get article by id");
+		logger.info("get in Article Service to get articles by id");
 		return articleDao.selectByPrimaryKey(articleId);
 	}
 
@@ -38,6 +38,12 @@ public class ArticleServiceImpl implements ArticleService {
 	public int insertArticle(Article article) throws Exception {
 		logger.info("get in insert article service");
 		return articleDao.insertArticleRecord(article);
+	}
+
+	@Override
+	public List<Article> getArticlesByUserName(String userName) throws Exception {
+		logger.info("get in Article Service to get articles by user name");
+		return articleDao.selectByUserName(userName);
 	}
 
 }

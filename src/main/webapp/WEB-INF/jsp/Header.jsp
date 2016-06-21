@@ -6,7 +6,7 @@
 			<div class="navbar">
 				<div class="navbar-inner">
 					<div class="container-fluid">
-						 <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a> <a href="#" class="brand">Cary</a>
+						 <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a> <a href="#" class="brand">WISH</a>
 						<div class="nav-collapse collapse navbar-responsive-collapse">
 							<ul class="nav">
 							<%  if (request.getAttribute("page") == "HomePage") { %>
@@ -14,17 +14,21 @@
 							<%  } else { %>
 								<li>
 							<% 	} %>
-									<a href="/cary/home/">主页</a>
+									<a href="${pageContext.request.contextPath}/home/">主页</a>
 								</li>
 							<%  if (request.getAttribute("page") == "WritePage") { %>
 								<li class="active">
 							<%  } else { %>
 								<li>
 							<% 	} %>
-									<a href="/cary/write/">写字</a>
+									<a href="${pageContext.request.contextPath}/write/">写字</a>
 								</li>
+							<%  if (request.getAttribute("page") == "UserArticlePage") { %>
+								<li class="active">
+							<%  } else { %>
 								<li>
-									<a href="#">链接</a>
+							<% 	} %>
+									<a href="${pageContext.request.contextPath}/userArticle/">个人文章</a>
 								</li>
 								<li class="dropdown">
 									 <a data-toggle="dropdown" class="dropdown-toggle" href="#">下拉菜单<strong class="caret"></strong></a>
@@ -54,9 +58,17 @@
 							</ul>
 							<ul class="nav pull-right">
 								<li>
-									<a href="#">
-										
-									</a>
+									<%
+										if (request.getCookies() != null){
+											for (Cookie c : request.getCookies()) {
+												if (c.getName().equals("account")) {
+									%>
+													<a href=""><%=c.getValue() %></a>
+									<%
+												}
+											}
+										}
+									%>
 								</li>
 								<li class="divider-vertical">
 								</li>

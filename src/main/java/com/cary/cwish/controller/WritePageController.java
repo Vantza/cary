@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.cary.cwish.pojo.Article;
 import com.cary.cwish.service.ArticleService;
+import com.cary.cwish.utils.CommonUtils;
 import com.cary.cwish.utils.WishConstant;
 
 @Controller
@@ -38,15 +39,7 @@ public class WritePageController {
 		logger.info("Encoding is :" + req.getCharacterEncoding());
 		String text = req.getParameter("editor");
 		String title = req.getParameter("title");
-		String userName = null;
-		if (req.getCookies() != null){
-			for (Cookie c : req.getCookies()) {
-				if (c.getName().equals("account")) {
-					userName = c.getValue();
-					logger.info("user : " + userName);
-				}
-			}
-		}
+		String userName = CommonUtils.getUserName(req);
 		art.setTitle(title);
 		art.setText(text);
 		art.setUserName(userName);

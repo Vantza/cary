@@ -71,4 +71,13 @@ public class TestMyBatis {
     	int recordCount = articleService.insertArticle(article);
     	logger.info(recordCount);
     }
+    
+    @Test
+    public void testGetArticlesByUserName() throws Exception {
+    	logger.info("get in testGetArticlesByUserName");
+    	List<Article> arts = articleService.getArticlesByUserName("cary@qq.com");
+    	for(Article a : arts) {
+    		logger.info(JSON.toJSONString(a));
+    	}
+    }
 }  

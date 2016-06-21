@@ -75,4 +75,9 @@ public interface ArticleDao {
      * insert into user_article one record
      */
     int insertArticleRecord(Article record);
+    
+    /**
+     * get articles by user name
+     */
+    List<Article> selectByUserName(String userName);
 }

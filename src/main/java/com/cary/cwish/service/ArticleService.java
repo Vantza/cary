@@ -12,4 +12,6 @@ public interface ArticleService {
 	public List<Article> getArticles(int startNum) throws Exception;
 	
 	public int insertArticle(Article article) throws Exception;
+	
+	public List<Article> getArticlesByUserName(String userName) throws Exception;
 }

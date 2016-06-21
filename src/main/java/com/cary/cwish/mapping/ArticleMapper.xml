@@ -166,4 +166,13 @@
     values (#{userName,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
       #{date,jdbcType=TIMESTAMP}, #{text,jdbcType=LONGVARCHAR})
   </insert>
+  <select id="selectByUserName" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from user_article
+    where user_name = #{userName, jdbcType=VARCHAR}
+    order by date desc
+  </select>
 </mapper>
