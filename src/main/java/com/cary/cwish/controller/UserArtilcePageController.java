@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.alibaba.fastjson.JSONObject;
 import com.cary.cwish.pojo.Article;
 import com.cary.cwish.service.ArticleService;
 import com.cary.cwish.utils.CommonUtils;
@@ -29,6 +30,7 @@ public class UserArtilcePageController {
 		ModelAndView mav = new ModelAndView(WishConstant.USERARTICLEPAGE);
 		
 		try {
+			logger.info("get in user article page");
 			int articleCount = articleService.getArticleCount();
 			String userName = CommonUtils.getUserName(req);
 			List<Article> articles = articleService.getArticlesByUserName(userName);
@@ -39,5 +41,21 @@ public class UserArtilcePageController {
 			e.printStackTrace();
 		}
 		return mav;
+	}
+	
+	@RequestMapping(value= "/pageInfo")
+	public void getUserPageInfo(HttpServletRequest req, HttpServletResponse res) {
+		JSONObject jsonObject;
+		
+		try {
+			logger.info("get in page info method");
+			int articleCount = articleService.getArticleCount();
+			jsonObject = new JSONObject();
+			jsonObject.put("artCount", articleCount);
+			res.getWriter().write(jsonObject.toString());
+			logger.info("page count: " + jsonObject.toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
