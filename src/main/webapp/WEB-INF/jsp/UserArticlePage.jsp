@@ -9,6 +9,7 @@
 		<title>This is your articles.</title>
 		<script type="text/javascript" src="http://www.francescomalagrino.com/BootstrapPageGenerator/3/js/jquery-2.0.0.min.js"></script>
 		<script type="text/javascript" src="http://www.francescomalagrino.com/BootstrapPageGenerator/3/js/jquery-ui"></script>
+		<link href="http://www.francescomalagrino.com/BootstrapPageGenerator/3/css/bootstrap.min.css" rel="stylesheet" media="screen">
 		<link href="http://www.francescomalagrino.com/BootstrapPageGenerator/3/css/bootstrap-combined.min.css" rel="stylesheet" media="screen">
 		<script type="text/javascript" src="http://www.francescomalagrino.com/BootstrapPageGenerator/3/js/bootstrap.min.js"></script>
 	</head>
@@ -16,6 +17,7 @@
 
 	<jsp:include page="Header.jsp"></jsp:include>
 
+	<div class="artsPart">
 	<%
 		List<Article> articles = (List<Article>)request.getAttribute("articles");
 		for (Article art : articles) {
@@ -39,7 +41,9 @@
 	<%		
 		}
 	%>
+	</div>
 
+	<jsp:include page="Pagination.jsp"></jsp:include>
 
 	</body>
 </html>

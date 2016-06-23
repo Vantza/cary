@@ -26,15 +26,12 @@ public class HomePageController {
 	public ModelAndView getHomePage(HttpServletRequest request, Model model){
 		ModelAndView mav = new ModelAndView(WishConstant.HOMEPAGE);
 		try {
-			int articleCount = articleService.getArticleCount();
-
 			List<Article> articles = articleService.getArticles(0);
 			logger.info("get into homepage(/home): ");
 			for (Article art : articles) {
 				logger.info(art.getUserName());
 			}
 			mav.addObject("articles", articles);
-			mav.addObject("articleCount", articleCount);
 			mav.addObject("page", WishConstant.HOMEPAGE);
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -151,6 +151,7 @@
   <select id="selectArticleCount" resultType="java.lang.Integer" >
     select count(*)
     from user_article
+    where user_name = #{userName, jdbcType=VARCHAR}
   </select>
   <select id="selectByPrimaryKeyInLimit" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
     select 
@@ -166,7 +167,7 @@
     values (#{userName,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
       #{date,jdbcType=TIMESTAMP}, #{text,jdbcType=LONGVARCHAR})
   </insert>
-  <select id="selectByUserName" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+  <select id="selectByUserName" resultMap="ResultMapWithBLOBs" >
     select 
     <include refid="Base_Column_List" />
     ,
@@ -174,5 +175,6 @@
     from user_article
     where user_name = #{userName, jdbcType=VARCHAR}
     order by date desc
+    limit #{currentPage, jdbcType=INTEGER}, 10
   </select>
 </mapper>

@@ -25,15 +25,21 @@ public class UserArtilcePageController {
 	@Resource
 	ArticleService articleService;
 	
+	/**
+	 * For first entrance in user article page
+	 * @param req
+	 * @param res
+	 * @return
+	 */
 	@RequestMapping(value= "/")
 	public ModelAndView userArticlePage(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mav = new ModelAndView(WishConstant.USERARTICLEPAGE);
 		
 		try {
 			logger.info("get in user article page");
-			int articleCount = articleService.getArticleCount();
 			String userName = CommonUtils.getUserName(req);
-			List<Article> articles = articleService.getArticlesByUserName(userName);
+			int articleCount = articleService.getArticleCount(userName);
+			List<Article> articles = articleService.getArticlesByUserName(userName, 0);
 			mav.addObject("articles", articles);
 			mav.addObject("articleCount", articleCount);
 			mav.addObject("page", WishConstant.USERARTICLEPAGE);
@@ -43,13 +49,19 @@ public class UserArtilcePageController {
 		return mav;
 	}
 	
+	/**
+	 * To get page count information by ajax
+	 * @param req
+	 * @param res
+	 */
 	@RequestMapping(value= "/pageInfo")
 	public void getUserPageInfo(HttpServletRequest req, HttpServletResponse res) {
 		JSONObject jsonObject;
 		
 		try {
 			logger.info("get in page info method");
-			int articleCount = articleService.getArticleCount();
+			String userName = CommonUtils.getUserName(req);
+			int articleCount = articleService.getArticleCount(userName);
 			jsonObject = new JSONObject();
 			jsonObject.put("artCount", articleCount);
 			res.getWriter().write(jsonObject.toString());
@@ -57,5 +69,34 @@ public class UserArtilcePageController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	/**
+	 * To get current page by ajax
+	 * @param req
+	 * @param res
+	 */
+	@RequestMapping(value="/currentPageArts")
+	public void getUserArticlesByPage(HttpServletRequest req, HttpServletResponse res) {
+		JSONObject jsonObject;
+		
+		res.setCharacterEncoding("UTF-8");
+		logger.info("get in get user articles by page");
+		String userName = CommonUtils.getUserName(req);
+		String cPageStr = req.getParameter("currentPage");
+		logger.info("currentPage = " + cPageStr);
+		logger.info("Encoding is :" + res.getCharacterEncoding());
+		int cPage = Integer.parseInt(cPageStr);
+		
+		try {
+			List<Article> articles = articleService.getArticlesByUserName(userName, (cPage-1)*10);
+			logger.info(articles.size());
+			jsonObject = new JSONObject();
+			jsonObject.put("currentArticles", articles);
+			res.getWriter().write(jsonObject.toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 }

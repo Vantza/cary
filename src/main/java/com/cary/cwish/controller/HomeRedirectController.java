@@ -26,15 +26,12 @@ public class HomeRedirectController {
 		ModelAndView mav = new ModelAndView("HomePage");
 		
 		try {
-			int articleCount = articleService.getArticleCount();
-
 			List<Article> articles = articleService.getArticles(0);
 			logger.info("get into homepage(/cary): ");
 			for (Article art : articles) {
 				logger.info(art.getUserName());
 			}
 			mav.addObject("articles", articles);
-			mav.addObject("articleCount", articleCount);
 			mav.addObject("page", WishConstant.HOMEPAGE);
 		} catch (Exception e) {
 			e.printStackTrace();

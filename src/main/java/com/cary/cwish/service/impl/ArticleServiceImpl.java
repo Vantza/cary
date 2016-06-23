@@ -23,9 +23,9 @@ public class ArticleServiceImpl implements ArticleService {
 	}
 
 	@Override
-	public int getArticleCount() throws Exception {
+	public int getArticleCount(String userName) throws Exception {
 		logger.info("get in Article Service to get article count");
-		return articleDao.selectArticleCount();
+		return articleDao.selectArticleCount(userName);
 	}
 
 	@Override
@@ -41,9 +41,9 @@ public class ArticleServiceImpl implements ArticleService {
 	}
 
 	@Override
-	public List<Article> getArticlesByUserName(String userName) throws Exception {
+	public List<Article> getArticlesByUserName(String userName, int currentPage) throws Exception {
 		logger.info("get in Article Service to get articles by user name");
-		return articleDao.selectByUserName(userName);
+		return articleDao.selectByUserName(userName, currentPage);
 	}
 
 }

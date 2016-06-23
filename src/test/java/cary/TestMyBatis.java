@@ -48,7 +48,7 @@ public class TestMyBatis {
     @Test
     public void testGetArticleCount() throws Exception {
     	logger.info("get in testGetArticleCount");
-    	int count = articleService.getArticleCount();
+    	int count = articleService.getArticleCount("cary@qq.com");
     	logger.info(JSON.toJSONString(count));
     }
     
@@ -75,7 +75,7 @@ public class TestMyBatis {
     @Test
     public void testGetArticlesByUserName() throws Exception {
     	logger.info("get in testGetArticlesByUserName");
-    	List<Article> arts = articleService.getArticlesByUserName("cary@qq.com");
+    	List<Article> arts = articleService.getArticlesByUserName("cary@qq.com", 0);
     	for(Article a : arts) {
     		logger.info(JSON.toJSONString(a));
     	}

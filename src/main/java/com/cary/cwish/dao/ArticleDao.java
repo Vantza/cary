@@ -2,6 +2,8 @@ package com.cary.cwish.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.cary.cwish.pojo.Article;
 
 public interface ArticleDao {
@@ -64,7 +66,7 @@ public interface ArticleDao {
     /**
      * get article count from database
      */
-    int selectArticleCount();
+    int selectArticleCount(String userName);
     
     /**
      * get 10 record from one selection
@@ -79,5 +81,5 @@ public interface ArticleDao {
     /**
      * get articles by user name
      */
-    List<Article> selectByUserName(String userName);
+    List<Article> selectByUserName(@Param("userName")String name, @Param("currentPage")Integer page);
 }
