@@ -62,6 +62,11 @@
 	        <mvc:mapping path="/write/"/>  
 	        <!-- 定义在mvc:interceptor下面的表示是对特定的请求才进行拦截的 -->  
 	        <bean class="com.cary.cwish.interceptor.LoginInterceptor" />  
-	    </mvc:interceptor>  
+	    </mvc:interceptor>
+	    <mvc:interceptor>  
+	        <mvc:mapping path="/userArticle/"/>  
+	        <!-- 定义在mvc:interceptor下面的表示是对特定的请求才进行拦截的 -->  
+	        <bean class="com.cary.cwish.interceptor.LoginInterceptor" />  
+	    </mvc:interceptor>
 	</mvc:interceptors>
 </beans>

@@ -12,7 +12,7 @@ function getPageInfo() {
 		url: "pageInfo",
 		async: true,
 		success: function(result) {
-			alert(result);
+			// alert(result);
 			totalCount = eval('(' + result + ')').artCount;
 			totalpage = Math.ceil(totalCount/10);
 			setpage();
@@ -29,7 +29,7 @@ function getCurrentPageArticles(currentPage) {
 			'currentPage' : currentPage
 		},
 		success: function(data) {
-			alert(data);
+			// alert(data);
 			var obj = eval('(' + data + ')');
 			setPageArts(obj);
 		}
