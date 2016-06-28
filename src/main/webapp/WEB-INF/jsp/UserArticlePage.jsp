@@ -17,31 +17,7 @@
 
 	<jsp:include page="Header.jsp"></jsp:include>
 
-	<div class="artsPart">
-	<%
-		List<Article> articles = (List<Article>)request.getAttribute("articles");
-		for (Article art : articles) {
-	%>
-			<div class="container-fluid">
-				<div class="row-fluid">
-					<div class="col-md-8 col-md-offset-2"><a href=""><%=art.getTitle()%></a></div>
-				</div>
-				<div class="row-fluid">
-					<hr class="col-md-8 col-md-offset-2" />
-				</div>
-				<div class="row-fluid">
-					<div class="col-md-8 col-md-offset-2"><%=art.getText()%></div>
-				</div>
-				<br/>
-				<div class="row-fluid">
-					<hr style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" color=#555666 SIZE=5 class="col-md-8 col-md-offset-2">
-				</div>
-				<br/>
-			</div>
-	<%		
-		}
-	%>
-	</div>
+	<jsp:include page="ArticleDisplay.jsp"></jsp:include>
 
 	<jsp:include page="Pagination.jsp"></jsp:include>
 
