@@ -32,7 +32,7 @@ public class HomeRedirectController {
 				logger.info(art.getUserName());
 			}
 			mav.addObject("articles", articles);
-			mav.addObject("page", WishConstant.HOMEPAGE);
+			mav.addObject("page", WishConstant.HOME_PAGE);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

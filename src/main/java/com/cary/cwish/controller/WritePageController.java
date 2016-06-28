@@ -25,9 +25,9 @@ public class WritePageController {
 	
 	@RequestMapping(value= "/")
 	public ModelAndView writePage() {
-		ModelAndView mav = new ModelAndView(WishConstant.WRITEPAGE);
+		ModelAndView mav = new ModelAndView(WishConstant.WRITE_PAGE);
 		
-		mav.addObject("page", WishConstant.WRITEPAGE);
+		mav.addObject("page", WishConstant.WRITE_PAGE);
 		return mav;
 	}
 	
@@ -38,7 +38,7 @@ public class WritePageController {
 		logger.info("Encoding is :" + req.getCharacterEncoding());
 		String text = req.getParameter("editor");
 		String title = req.getParameter("title");
-		String userName = CommonUtils.getUserName(req);
+		String userName = CommonUtils.getUserNameInCookie(req);
 		art.setTitle(title);
 		art.setText(text);
 		art.setUserName(userName);

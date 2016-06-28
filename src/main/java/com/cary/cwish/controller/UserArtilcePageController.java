@@ -33,16 +33,16 @@ public class UserArtilcePageController {
 	 */
 	@RequestMapping(value= "/")
 	public ModelAndView userArticlePage(HttpServletRequest req, HttpServletResponse res) {
-		ModelAndView mav = new ModelAndView(WishConstant.USERARTICLEPAGE);
+		ModelAndView mav = new ModelAndView(WishConstant.USER_ARTICLE_PAGE);
 		
 		try {
 			logger.info("get in user article page");
-			String userName = CommonUtils.getUserName(req);
+			String userName = CommonUtils.getUserNameInCookie(req);
 			int articleCount = articleService.getArticleCount(userName);
 			List<Article> articles = articleService.getArticlesByUserName(userName, 0);
 			mav.addObject("articles", articles);
 			mav.addObject("articleCount", articleCount);
-			mav.addObject("page", WishConstant.USERARTICLEPAGE);
+			mav.addObject("page", WishConstant.USER_ARTICLE_PAGE);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -60,7 +60,7 @@ public class UserArtilcePageController {
 		
 		try {
 			logger.info("get in page info method");
-			String userName = CommonUtils.getUserName(req);
+			String userName = CommonUtils.getUserNameInCookie(req);
 			int articleCount = articleService.getArticleCount(userName);
 			jsonObject = new JSONObject();
 			jsonObject.put("artCount", articleCount);
@@ -82,7 +82,7 @@ public class UserArtilcePageController {
 		
 		res.setCharacterEncoding("UTF-8");
 		logger.info("get in get user articles by page");
-		String userName = CommonUtils.getUserName(req);
+		String userName = CommonUtils.getUserNameInCookie(req);
 		String cPageStr = req.getParameter("currentPage");
 		logger.info("currentPage = " + cPageStr);
 		logger.info("Encoding is :" + res.getCharacterEncoding());

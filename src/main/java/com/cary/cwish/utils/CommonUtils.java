@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 
 public class CommonUtils {
 	
-	public final static String getUserName(HttpServletRequest req) {
+	public final static String getUserNameInCookie(HttpServletRequest req) {
 		if (req.getCookies() != null){
 			for (Cookie c : req.getCookies()) {
 				if (c.getName().equals("account")) {

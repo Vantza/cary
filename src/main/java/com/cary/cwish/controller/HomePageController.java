@@ -24,7 +24,7 @@ public class HomePageController {
 	
 	@RequestMapping(value= "/")
 	public ModelAndView getHomePage(HttpServletRequest request, Model model){
-		ModelAndView mav = new ModelAndView(WishConstant.HOMEPAGE);
+		ModelAndView mav = new ModelAndView(WishConstant.HOME_PAGE);
 		try {
 			List<Article> articles = articleService.getArticles(0);
 			logger.info("get into homepage(/home): ");
@@ -32,7 +32,7 @@ public class HomePageController {
 				logger.info(art.getUserName());
 			}
 			mav.addObject("articles", articles);
-			mav.addObject("page", WishConstant.HOMEPAGE);
+			mav.addObject("page", WishConstant.HOME_PAGE);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

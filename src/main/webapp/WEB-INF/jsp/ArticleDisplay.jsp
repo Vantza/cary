@@ -10,17 +10,7 @@
 		<div class="container-fluid">
 			<div class="row-fluid">
 				<div class="col-md-1 col-md-offset-1">
-				<%
-					if (request.getCookies() != null){
-						for (Cookie c : request.getCookies()) {
-							if (c.getName().equals("account")) {
-				%>
-								<a href=""><%=c.getValue() %></a>
-				<%
-							}
-						}
-					}
-				%>
+					<%=art.getUserName()%>
 				</div>
 				<div class="col-md-8"><a href=""><%=art.getTitle()%></a></div>
 			</div>

@@ -1,8 +1,8 @@
 package com.cary.cwish.utils;
 
 public class WishConstant {
-	public static final String HOMEPAGE = "HomePage";
-	public static final String WRITEPAGE = "WritePage";
-	public static final String USERARTICLEPAGE = "UserArticlePage";
+	public static final String HOME_PAGE = "HomePage";
+	public static final String WRITE_PAGE = "WritePage";
+	public static final String USER_ARTICLE_PAGE = "UserArticlePage";
 
 }
