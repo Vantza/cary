@@ -2,7 +2,7 @@
     pageEncoding="utf-8"%>
 <%@ page import="java.util.*" %>
 <%@ page import="com.cary.cwish.pojo.Article" %>
-<div class="artsPart">
+<div class="artsPart mainBody">
 <%
 	List<Article> articles = (List<Article>)request.getAttribute("articles");
 	for (Article art : articles) {

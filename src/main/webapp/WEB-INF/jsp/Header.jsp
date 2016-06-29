@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-<div class="container-fluid">
-	<div class="row-fluid">
+<div class="container-fluid topHeader">
+	<div class="row-fluid" position: fixed;top: 0px;>
 		<div class="span12">
 			<div class="navbar">
 				<div class="navbar-inner">
