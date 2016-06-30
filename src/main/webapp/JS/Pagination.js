@@ -101,6 +101,7 @@ function setPageArts(obj) {
 	for (var i=0; i<arts.length; i++) {
 		artsPart = artsPart + 	"<div class='container-fluid'>" +
 									"<div class='row-fluid'>" +
+										"<div class='col-md-1 col-md-offset-1'>" + arts[i].userName + "</div>" +
 										"<div class='col-md-8 col-md-offset-2'><a href='javascript:void(0)'>" +
 											arts[i].title +
 										"</a></div>" +
@@ -110,7 +111,10 @@ function setPageArts(obj) {
 								  		"<div class='col-md-8 col-md-offset-2'>" +
 								  			arts[i].text +
 								  		"</div>" +
-								  	"</div>" +
+								  	"</div></br>" +
+								  	"<div class='row-fluid'><div class='col-md-2 col-md-offset-10'>" +
+								  		"<a href=''>收起</a>" +
+								  	"</div></div>" +
 								  	"<div class='row-fluid'><hr style='FILTER: alpha(opacity=100,finishopacity=0,style=3)' color=#555666 SIZE=5 class='col-md-8 col-md-offset-2'></div><br/>" +
 								"</div>"
 	}
