@@ -18,7 +18,7 @@
 				<hr class="col-md-8 col-md-offset-2" />
 			</div>
 			<div class="row-fluid">
-				<div class="col-md-8 col-md-offset-2"><%=art.getText()%></div>
+				<div class="col-md-8 col-md-offset-2 artText"><%=art.getText()%></div>
 			</div>
 			<br/>
 			<div class="row-fluid">

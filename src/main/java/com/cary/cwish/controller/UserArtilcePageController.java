@@ -97,6 +97,23 @@ public class UserArtilcePageController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	/**
+	 * To get the first page of user articles page.
+	 * @param req
+	 * @param res
+	 * @throws Exception
+	 */
+	@RequestMapping(value="/firstPageArts")
+	public void getFirstPageArts(HttpServletRequest req, HttpServletResponse res) throws Exception {
+		JSONObject jsonObject;
 		
+		res.setCharacterEncoding("UTF-8");
+		String userName = CommonUtils.getUserNameInCookie(req);
+		List<Article> articles = articleService.getArticlesByUserName(userName, 0);
+		jsonObject = new JSONObject();
+		jsonObject.put("currentArticles", articles);
+		res.getWriter().write(jsonObject.toString());
 	}
 }

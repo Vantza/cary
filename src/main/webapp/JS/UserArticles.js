@@ -1,5 +1,5 @@
 $(function(){
-	getArtsInfo();
+	getFirstPageArticles();
 });
 
 
@@ -10,7 +10,7 @@ function collapse(id) {
 }
 
 function setArticles(arts) {
-	var articles = arts.articles,
+	var articles = arts.currentArticles,
 		outstr = "<div class='container-fluid artEach'>";
 	$.each(articles, function (i, art) {
 		outstr = outstr +	"<div class='row-fluid'>" +
@@ -32,16 +32,15 @@ function setArticles(arts) {
 	$('.artsPart').html(outstr);
 }
 
-function getArtsInfo() {
-	var arts;
+function getFirstPageArticles() {
 	$.ajax({
 		type: "GET",
-		url: "homeArticles",
+		url: "firstPageArts",
 		async: true,
-		success: function(result) {
-			// alert(result);
-			arts = eval('(' + result + ')');
-			setArticles(arts);
+		success: function(data) {
+			// alert(data);
+			var obj = eval('(' + data + ')');
+			setArticles(obj);
 		}
 	});
 }

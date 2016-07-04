@@ -13,6 +13,7 @@
 		<link href="http://www.francescomalagrino.com/BootstrapPageGenerator/3/css/bootstrap-combined.min.css" rel="stylesheet" media="screen">
 		<script type="text/javascript" src="http://www.francescomalagrino.com/BootstrapPageGenerator/3/js/bootstrap.min.js"></script>
 		<link href="../CSS/Common.css" rel="stylesheet" media="screen" type="text/css" />
+		<script type="text/javascript" src="../JS/UserArticles.js"></script>
 	</head>
 	<body>
 
