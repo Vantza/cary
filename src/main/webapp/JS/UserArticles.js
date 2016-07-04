@@ -5,8 +5,14 @@ $(function(){
 
 function collapse(id) {
 	// alert(id);
-	var text = '.artText-' + id;
+	var text = '.artText-' + id,
+		collapseId = '.collapse-' + id;
 	$(text).toggle();
+	if ($(collapseId).text() == '收起') {
+		$(collapseId).html('显示全部');	
+	} else {
+		$(collapseId).html('收起');
+	}
 }
 
 function setArticles(arts) {
