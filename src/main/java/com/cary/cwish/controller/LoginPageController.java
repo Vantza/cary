@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.cary.cwish.pojo.User;
 import com.cary.cwish.service.UserService;
+import com.cary.cwish.utils.CommonUtils;
 import com.cary.cwish.utils.MathUtils;
 
 @Controller
@@ -84,4 +85,16 @@ public class LoginPageController {
         }
 	}
 	
+	@RequestMapping(value="/logOut")
+	public void logOut(HttpServletRequest req, HttpServletResponse res) throws Exception {
+		logger.info("get in log out method");
+		Cookie accCookie = CommonUtils.deleteCookie("account", req);
+		accCookie.setPath("/");
+		res.addCookie(accCookie);
+		Cookie ssidCookie = CommonUtils.deleteCookie("ssid", req);
+		ssidCookie.setPath("/");
+		res.addCookie(ssidCookie);
+		logger.info(CommonUtils.getUserNameInCookie(req));
+		res.sendRedirect("/cary/home/");
+	}
 }

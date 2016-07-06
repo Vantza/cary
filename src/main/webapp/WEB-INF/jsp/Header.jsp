@@ -73,10 +73,10 @@
 								<li class="divider-vertical">
 								</li>
 								<li class="dropdown">
-									 <a data-toggle="dropdown" class="dropdown-toggle" href="#">下拉菜单<strong class="caret"></strong></a>
+									 <a data-toggle="dropdown" class="dropdown-toggle" href="#">选项<strong class="caret"></strong></a>
 									<ul class="dropdown-menu">
 										<li>
-											<a href="#">下拉导航1</a>
+											<a href="${pageContext.request.contextPath}/loginPage/logOut">log out</a>
 										</li>
 										<li>
 											<a href="#">下拉导航2</a>
