@@ -31,7 +31,11 @@ function setArticles(arts) {
 							"<div class='row-fluid'>" +
 								"<div class='col-md-8 col-md-offset-2 artText-" + art.articleId + "'>" + art.text + "</div>" +
 							"</div></br>" +
-							"<div class='row-fluid'><div class='col-md-2 col-md-offset-10'><p onclick='collapse(" + art.articleId + ")' class='collapse-" + art.articleId + "'>收起</p></div></div>" +
+							"<div class='row-fluid'><div class='col-md-4 col-md-offset-8'>" +
+								"<a onclick='comments(" + art.articleId + ")' class='comments-" + art.articleId + "'>发表评论</a>" +
+								"&nbsp;&nbsp;&nbsp;" +
+								"<a onclick='collapse(" + art.articleId + ")' class='collapse-" + art.articleId + "'>收起</a>" +
+							"</div></div>" +
 							"<div class='row-fluid'><hr style='FILTER: alpha(opacity=100,finishopacity=0,style=3)' color=#555666 SIZE=5 class='col-md-8 col-md-offset-2'></div></br>"
 	});
 	outstr = outstr + "</div>"
