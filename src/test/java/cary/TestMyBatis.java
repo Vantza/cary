@@ -12,8 +12,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
   
 import com.alibaba.fastjson.JSON;
 import com.cary.cwish.pojo.Article;
+import com.cary.cwish.pojo.Comment;
 import com.cary.cwish.pojo.User;
 import com.cary.cwish.service.ArticleService;
+import com.cary.cwish.service.CommentService;
 import com.cary.cwish.service.UserService;  
   
 @RunWith(SpringJUnit4ClassRunner.class)    //表示继承了SpringJUnit4ClassRunner类 
@@ -25,6 +27,8 @@ public class TestMyBatis {
     private UserService userService = null;
     @Resource
     private ArticleService articleService = null;
+    @Resource
+    private CommentService commentService = null;
     
     
     @Test  
@@ -79,5 +83,15 @@ public class TestMyBatis {
     	for(Article a : arts) {
     		logger.info(JSON.toJSONString(a));
     	}
+    }
+    
+    @Test
+    public void testInsertComment() throws Exception {
+    	logger.info("get in testInsertComment");
+    	Comment c = new Comment();
+    	c.setArticleId(1);
+    	c.setText("test comments");
+    	c.setUserName("cary");
+    	commentService.insertComment(c);
     }
 }  

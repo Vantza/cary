@@ -27,3 +27,7 @@ a:hover{
   color: grey;
   cursor: pointer;
 }
+
+.commentsTextArea {
+  resize: none;
+}

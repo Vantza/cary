@@ -14,7 +14,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.alibaba.fastjson.JSONObject;
 import com.cary.cwish.pojo.Article;
+import com.cary.cwish.pojo.Comment;
 import com.cary.cwish.service.ArticleService;
+import com.cary.cwish.service.CommentService;
+import com.cary.cwish.utils.CommonUtils;
 import com.cary.cwish.utils.WishConstant;
 
 @Controller
@@ -23,6 +26,8 @@ public class HomePageController {
 	private static Logger logger = Logger.getLogger(HomePageController.class);
 	@Resource
 	ArticleService articleService;
+	@Resource
+	CommentService commentService;
 	
 	@RequestMapping(value= "/")
 	public ModelAndView getHomePage(HttpServletRequest request, Model model){
@@ -30,9 +35,6 @@ public class HomePageController {
 		try {
 			List<Article> articles = articleService.getArticles(0);
 			logger.info("get into homepage(/home): ");
-			for (Article art : articles) {
-				logger.info(art.getUserName());
-			}
 			mav.addObject("articles", articles);
 			mav.addObject("page", WishConstant.HOME_PAGE);
 		} catch (Exception e) {
@@ -61,5 +63,23 @@ public class HomePageController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	/**
+	 * To submit comments to DB
+	 * @param req
+	 * @param res
+	 */
+	@RequestMapping(value="/submitComment")
+	public void submitComment(HttpServletRequest req, HttpServletResponse res) throws Exception {
+		res.setCharacterEncoding("UTF-8");
+		Comment comment = new Comment();
+		
+		comment.setUserName(CommonUtils.getUserNameInCookie(req));
+		comment.setText(req.getParameter("comments"));
+		comment.setArticleId(Integer.parseInt(req.getParameter("articleId")));
+		comment.setDate(null);
+		
+		commentService.insertComment(comment);
 	}
 }
