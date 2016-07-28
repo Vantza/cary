@@ -90,20 +90,44 @@ function comments(articleId) {
  * function to handle submit comments
  */
 function submitComment(articleId) {
-	var comments;
+	var comments,
+		account;
 
 	comments = $('.commentsTextArea-' + articleId).val();
 
-	$.ajax({
-		type: "GET",
-		url: "submitComment",
-		async: true,
-		data:{
-			'comments' : comments,
-			'articleId' : articleId
-		},
-		success: function(result) {
-			alert(result);
-		}
-	});
+	account = getCookie('account');
+
+	if (account!=null && account!=undefined && account!='') {
+		$.ajax({
+			type: "GET",
+			url: "submitComment",
+			async: true,
+			data:{
+				'comments' : comments,
+				'articleId' : articleId
+			},
+			success: function(result) {
+				// alert(result)
+				// hide comment div
+				$('.comments-' + articleId).html("");
+				// show comment which exsits
+			}
+		});
+	} else {
+		alert('请先登录再发表评论！');
+	}
 }
+
+/**
+ * get cookie
+ */
+function getCookie(name) 
+{ 
+    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+ 
+    if(arr=document.cookie.match(reg))
+ 
+        return unescape(arr[2]); 
+    else 
+        return null; 
+} 

@@ -81,5 +81,6 @@ public class HomePageController {
 		comment.setDate(null);
 		
 		commentService.insertComment(comment);
+		logger.info("comment had inserted into DB successfully!");
 	}
 }
