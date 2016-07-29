@@ -35,8 +35,11 @@ function setArticles(arts) {
 								"<a onclick='comments(" + art.articleId + ")' class='commentLabel-" + art.articleId + "'>发表评论</a>" +
 								"&nbsp;&nbsp;&nbsp;" +
 								"<a onclick='collapse(" + art.articleId + ")' class='collapse-" + art.articleId + "'>收起</a>" +
+								"&nbsp;&nbsp;&nbsp;" +
+								"<a onclick='showComments(" + art.articleId + ")' class='commentDisplayLabel-" + art.articleId + "'>查看评论</a>" +
 							"</div></div>" +
 							"<div class='row-fluid comments-" + art.articleId + "'></div>" +
+							"<div class='row-fluid commentsDisplay-" + art.articleId + "'></div>" +
 							"<div class='row-fluid'><hr style='FILTER: alpha(opacity=100,finishopacity=0,style=3)' color=#555666 SIZE=5 class='col-md-8 col-md-offset-2'></div></br>"
 	});
 	outstr = outstr + "</div>"
@@ -79,7 +82,7 @@ function comments(articleId) {
 
 		outstr = outstr + "</div>"
 		com.html(outstr);
-		lab.text('收起评论');
+		lab.text('取消发表');
 	} else {
 		com.html("");
 		lab.text('发表评论');
@@ -97,6 +100,10 @@ function submitComment(articleId) {
 
 	account = getCookie('account');
 
+	if (comments==null || comments==undefined || comments=='') {
+		alert('comment 不能为空！');
+	}
+
 	if (account!=null && account!=undefined && account!='') {
 		$.ajax({
 			type: "GET",
@@ -107,10 +114,10 @@ function submitComment(articleId) {
 				'articleId' : articleId
 			},
 			success: function(result) {
-				// alert(result)
+				// show comment which exsits
+				showComments(articleId);
 				// hide comment div
 				$('.comments-' + articleId).html("");
-				// show comment which exsits
 			}
 		});
 	} else {
@@ -121,13 +128,63 @@ function submitComment(articleId) {
 /**
  * get cookie
  */
-function getCookie(name) 
-{ 
-    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+function getCookie(name) { 
+    var arr,reg = new RegExp("(^| )"+name+"=([^;]*)(;|$)");
  
-    if(arr=document.cookie.match(reg))
+    if(arr = document.cookie.match(reg))
  
         return unescape(arr[2]); 
     else 
         return null; 
-} 
+}
+
+/**
+ * show comments of articles
+ */
+function showComments(articleId) {
+	var outstr = "<div class='col-md-8 col-md-offset-2'><div class='col-md-10 col-md-offset-1'>",
+		comdis = $('.commentsDisplay-' + articleId),
+		com = $('.comments-' + articleId),
+		label = $('.commentDisplayLabel-' + articleId),
+		coms;
+
+	coms = listArticleComments(articleId);
+
+	if (comdis.html()!='' && comdis.html()!=undefined && comdis.html()!=null && com.html()=='') {
+		comdis.html("");
+		label.text('查看评论');
+	} else {
+		$.each(coms.comments, function (i, com) {
+			outstr = outstr +	"<hr/>" +
+								"<div class='row-fluid'>" +
+									"<div class='col-md-2'>" + com.userName + "</div>" +
+									"<div class='col-md-8'>" + com.text + "</div><br/>" +
+								"</div>"
+		});
+
+		outstr = outstr + "</div></div>";
+
+		comdis.html(outstr);
+		label.text('收起评论');
+	}
+	
+}
+
+/**
+ * This method is to get article method by ajax
+ */
+function listArticleComments(articleId) {
+	var coms;
+	$.ajax({
+		type: "GET",
+		url: "listArticleComments",
+		data: {
+			'articleId' : articleId
+		},
+		async: false,
+		success: function(result) {
+			coms = eval('(' + result + ')');
+		}
+	});
+	return coms;
+}
