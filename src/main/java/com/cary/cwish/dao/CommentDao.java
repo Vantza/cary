@@ -1,5 +1,7 @@
 package com.cary.cwish.dao;
 
+import java.util.List;
+
 import com.cary.cwish.pojo.Comment;
 
 public interface CommentDao {
@@ -50,4 +52,11 @@ public interface CommentDao {
      * @mbggenerated
      */
     int updateByPrimaryKey(Comment record);
+    
+    /**
+     * This method is to get comments by article id
+     * @param articleId
+     * @return
+     */
+    List<Comment> selectByArticleId(Integer articleId);
 }

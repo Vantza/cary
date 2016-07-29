@@ -1,5 +1,7 @@
 package com.cary.cwish.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -16,5 +18,10 @@ public class CommentServiceImpl implements CommentService {
 	@Override
 	public void insertComment(Comment comment) throws Exception {
 		commentDao.insert(comment);
+	}
+
+	@Override
+	public List<Comment> getArticleComments(int articleId) throws Exception {
+		return commentDao.selectByArticleId(articleId);
 	}
 }

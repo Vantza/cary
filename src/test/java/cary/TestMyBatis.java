@@ -94,4 +94,11 @@ public class TestMyBatis {
     	c.setUserName("cary");
     	commentService.insertComment(c);
     }
+    
+    @Test
+    public void testGetArticleComments() throws Exception {
+    	logger.info("get in testGetArticleComments");
+    	List<Comment> coms = commentService.getArticleComments(19);
+    	logger.info("Comments count: " + coms.size());
+    }
 }  

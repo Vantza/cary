@@ -122,4 +122,10 @@
       date = #{date,jdbcType=TIMESTAMP}
     where comment_id = #{commentId,jdbcType=INTEGER}
   </update>
+  <select id="selectByArticleId" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from comments
+    where article_id = #{articelId,jdbcType=INTEGER}
+  </select>
 </mapper>

@@ -1,5 +1,6 @@
 package com.cary.cwish.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -82,5 +83,23 @@ public class HomePageController {
 		
 		commentService.insertComment(comment);
 		logger.info("comment had inserted into DB successfully!");
+	}
+	
+	/**
+	 * This method is to list article comments by article_id
+	 * @param req
+	 * @param res
+	 * @throws Exception
+	 */
+	@RequestMapping(value="/listArticleComments")
+	public void listArticleComments(HttpServletRequest req, HttpServletResponse res) throws Exception {
+		res.setCharacterEncoding("UTF-8");
+		List<Comment> coms = new ArrayList<Comment>();
+		JSONObject jsonObj = new JSONObject();
+		
+		int articleId = Integer.parseInt(req.getParameter("articleId"));
+		coms = commentService.getArticleComments(articleId);
+		jsonObj.put("comments", coms);
+		res.getWriter().write(jsonObj.toString());
 	}
 }
