@@ -118,6 +118,7 @@ function submitComment(articleId) {
 				showComments(articleId);
 				// hide comment div
 				$('.comments-' + articleId).html("");
+				$('.commentLabel-' + articleId).text('发表评论');
 			}
 		});
 	} else {
