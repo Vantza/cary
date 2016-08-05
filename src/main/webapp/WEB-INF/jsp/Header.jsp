@@ -37,21 +37,11 @@
 											<a href="#">下拉导航1</a>
 										</li>
 										<li>
-											<a href="#">下拉导航2</a>
-										</li>
-										<li>
 											<a href="#">其他</a>
 										</li>
-										<li class="divider">
-										</li>
+										<li class="divider"></li>
 										<li class="nav-header">
 											标签
-										</li>
-										<li>
-											<a href="#">链接1</a>
-										</li>
-										<li>
-											<a href="#">链接2</a>
 										</li>
 									</ul>
 								</li>
