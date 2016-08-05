@@ -89,11 +89,15 @@ public class LoginPageController {
 	public void logOut(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		logger.info("get in log out method");
 		Cookie accCookie = CommonUtils.deleteCookie("account", req);
-		accCookie.setPath("/");
-		res.addCookie(accCookie);
+		if (accCookie != null) {
+			accCookie.setPath("/");
+			res.addCookie(accCookie);
+		}
 		Cookie ssidCookie = CommonUtils.deleteCookie("ssid", req);
-		ssidCookie.setPath("/");
-		res.addCookie(ssidCookie);
+		if (ssidCookie != null) {
+			ssidCookie.setPath("/");
+			res.addCookie(ssidCookie);
+		}
 		logger.info(CommonUtils.getUserNameInCookie(req));
 		res.sendRedirect("/cary/home/");
 	}

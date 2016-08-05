@@ -79,7 +79,7 @@
 											<a href="${pageContext.request.contextPath}/loginPage/logOut">log out</a>
 										</li>
 										<li>
-											<a href="#">下拉导航2</a>
+											<a href="${pageContext.request.contextPath}/loginPage/">log in</a>
 										</li>
 										<li>
 											<a href="#">其他</a>
