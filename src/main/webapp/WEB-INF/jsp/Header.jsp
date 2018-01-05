@@ -77,7 +77,7 @@
 										<li class="divider">
 										</li>
 										<li>
-											<a href="#">链接3</a>
+											<a href="#">链接</a>
 										</li>
 									</ul>
 								</li>

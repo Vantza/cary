@@ -988,3 +988,89 @@ Caused by: org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bea
 [INFO] [2016-06-14 16:50:15][com.cary.cwish.service.impl.ArticleServiceImpl]get in Article Service
 [INFO] [2016-06-14 16:50:15][cary.TestMyBatis]{"articleId":1,"date":1465870718000,"text":"This is text","title":"This is title","userName":"Cary@qq.com"}
 [INFO] [2016-06-14 16:50:15][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@337d0578: startup date [Tue Jun 14 16:50:14 CST 2016]; root of context hierarchy
+[INFO] [2017-07-11 15:17:04][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO] [2017-07-11 15:17:04][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@59e84876: startup date [Tue Jul 11 15:17:04 CST 2017]; root of context hierarchy
+[INFO] [2017-07-11 15:17:04][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+[INFO] [2017-07-11 15:17:04][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] [2017-07-11 15:17:05][cary.TestMyBatis]get in testInsertComment
+[INFO] [2017-07-11 15:17:07][cary.TestMyBatis]get in testGetArticleById
+[INFO] [2017-07-11 15:17:07][com.cary.cwish.service.impl.ArticleServiceImpl]get in Article Service to get articles by id
+[INFO] [2017-07-11 15:17:07][cary.TestMyBatis]{"articleId":1,"date":1465955003000,"text":"绿蚁新醅酒，红泥小火炉。晚来天欲雪，能饮一杯无？<br/><br/>\n外面是白色的，屋内是橘黄色。<br/>\n缩着头下楼买两个烤红薯，左手换到右手，哈着白气跑上楼。<br/>\n下厨整两热菜，配上一小碟茴香豆。<br/>\n有故事有酒，有暖气有女朋友。<br/>\n桌下的小狗摇着尾巴，翘着首。<br/>","title":"你所期待的冬天是什么样子的？","userName":"Cary@qq.com"}
+[INFO] [2017-07-11 15:17:07][cary.TestMyBatis]get in testGetArticles
+[INFO] [2017-07-11 15:17:07][com.cary.cwish.service.impl.ArticleServiceImpl]get in Article Service to get 10 articles
+[INFO] [2017-07-11 15:17:07][cary.TestMyBatis]{"articleId":19,"date":1467270273000,"text":"<div style=\"background:#eee;border:1px solid #ccc;padding:5px 10px;\"><span style=\"color:#0000FF\"><span style=\"font-size:14px\">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</span></span></div>","title":"喂喂喂喂喂喂","userName":"cary@qq.com"}
+[INFO] [2017-07-11 15:17:07][cary.TestMyBatis]{"articleId":18,"date":1467083058000,"text":"<p style=\"text-align: center;\">6/28</p>\r\n\r\n<p style=\"text-align: center;\"><span style=\"font-family:comic sans ms,cursive\"><span style=\"font-size:24px\"><span style=\"color:#FF8C00\">chkeditor是否是正常运行的呢？</span></span></span></p>","title":"6/28","userName":"cary@qq.com"}
+[INFO] [2017-07-11 15:17:07][cary.TestMyBatis]{"articleId":17,"date":1466648669000,"text":"What a pity! I do not know what the story tells..","title":"This is an amazing story!!","userName":"Wulala"}
+[INFO] [2017-07-11 15:17:07][cary.TestMyBatis]{"articleId":13,"date":1466475128000,"text":"<p>啊哈哈哈哈哈哈哈哈哈</p>","title":"又一个测试","userName":"cary@qq.com"}
+[INFO] [2017-07-11 15:17:07][cary.TestMyBatis]{"articleId":12,"date":1466474798000,"text":"<p>爱丽丝的解放垃圾地方</p>","title":"发的","userName":"cary@qq.com"}
+[INFO] [2017-07-11 15:17:07][cary.TestMyBatis]{"articleId":11,"date":1466150584000,"text":"<p>This article should not show up if user do not refresh the page.</p>","title":"Title 11","userName":"cary@qq.com"}
+[INFO] [2017-07-11 15:17:07][cary.TestMyBatis]{"articleId":10,"date":1466150535000,"text":"<p>text 10</p>","title":"title 10","userName":"cary@qq.com"}
+[INFO] [2017-07-11 15:17:07][cary.TestMyBatis]{"articleId":9,"date":1466150526000,"text":"<p>text 9</p>","title":"title 9","userName":"cary@qq.com"}
+[INFO] [2017-07-11 15:17:07][cary.TestMyBatis]{"articleId":8,"date":1466150516000,"text":"<p>text 8</p>","title":"title 8","userName":"cary@qq.com"}
+[INFO] [2017-07-11 15:17:07][cary.TestMyBatis]{"articleId":7,"date":1466150504000,"text":"<p>Text 7</p>","title":"title 7","userName":"cary@qq.com"}
+[INFO] [2017-07-11 15:17:07][cary.TestMyBatis]get in testInsertArticle
+[INFO] [2017-07-11 15:17:07][com.cary.cwish.service.impl.ArticleServiceImpl]get in insert article service
+[INFO] [2017-07-11 15:17:07][cary.TestMyBatis]1
+[INFO] [2017-07-11 15:17:07][cary.TestMyBatis]get in testGetArticleCount
+[INFO] [2017-07-11 15:17:07][com.cary.cwish.service.impl.ArticleServiceImpl]get in Article Service to get article count
+[INFO] [2017-07-11 15:17:07][cary.TestMyBatis]11
+[INFO] [2017-07-11 15:17:07][cary.TestMyBatis]get in testGetUserById
+[INFO] [2017-07-11 15:17:07][cary.TestMyBatis]{"age":24,"id":1,"password":"123456","userName":"Cary@qq.com"}
+[INFO] [2017-07-11 15:17:07][cary.TestMyBatis]get in testGetArticleComments
+[INFO] [2017-07-11 15:17:07][cary.TestMyBatis]Comments count: 1
+[INFO] [2017-07-11 15:17:08][cary.TestMyBatis]get in testGetArticlesByUserName
+[INFO] [2017-07-11 15:17:08][com.cary.cwish.service.impl.ArticleServiceImpl]get in Article Service to get articles by user name
+[INFO] [2017-07-11 15:17:08][cary.TestMyBatis]{"articleId":19,"date":1467270273000,"text":"<div style=\"background:#eee;border:1px solid #ccc;padding:5px 10px;\"><span style=\"color:#0000FF\"><span style=\"font-size:14px\">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</span></span></div>","title":"喂喂喂喂喂喂","userName":"cary@qq.com"}
+[INFO] [2017-07-11 15:17:08][cary.TestMyBatis]{"articleId":18,"date":1467083058000,"text":"<p style=\"text-align: center;\">6/28</p>\r\n\r\n<p style=\"text-align: center;\"><span style=\"font-family:comic sans ms,cursive\"><span style=\"font-size:24px\"><span style=\"color:#FF8C00\">chkeditor是否是正常运行的呢？</span></span></span></p>","title":"6/28","userName":"cary@qq.com"}
+[INFO] [2017-07-11 15:17:08][cary.TestMyBatis]{"articleId":13,"date":1466475128000,"text":"<p>啊哈哈哈哈哈哈哈哈哈</p>","title":"又一个测试","userName":"cary@qq.com"}
+[INFO] [2017-07-11 15:17:08][cary.TestMyBatis]{"articleId":12,"date":1466474798000,"text":"<p>爱丽丝的解放垃圾地方</p>","title":"发的","userName":"cary@qq.com"}
+[INFO] [2017-07-11 15:17:08][cary.TestMyBatis]{"articleId":11,"date":1466150584000,"text":"<p>This article should not show up if user do not refresh the page.</p>","title":"Title 11","userName":"cary@qq.com"}
+[INFO] [2017-07-11 15:17:08][cary.TestMyBatis]{"articleId":10,"date":1466150535000,"text":"<p>text 10</p>","title":"title 10","userName":"cary@qq.com"}
+[INFO] [2017-07-11 15:17:08][cary.TestMyBatis]{"articleId":9,"date":1466150526000,"text":"<p>text 9</p>","title":"title 9","userName":"cary@qq.com"}
+[INFO] [2017-07-11 15:17:08][cary.TestMyBatis]{"articleId":8,"date":1466150516000,"text":"<p>text 8</p>","title":"title 8","userName":"cary@qq.com"}
+[INFO] [2017-07-11 15:17:08][cary.TestMyBatis]{"articleId":7,"date":1466150504000,"text":"<p>Text 7</p>","title":"title 7","userName":"cary@qq.com"}
+[INFO] [2017-07-11 15:17:08][cary.TestMyBatis]{"articleId":6,"date":1466149474000,"text":"<p><span style=\"color:#FF8C00\"><span style=\"font-size:22px\"><span style=\"font-family:comic sans ms,cursive\">This is a test for write page.</span></span></span></p>\r\n\r\n<p><span style=\"color:#FF8C00\"><span style=\"font-size:22px\"><span style=\"font-family:comic sans ms,cursive\">To check insert function working correctly</span></span></span></p>","title":"test insert function","userName":"cary@qq.com"}
+[INFO] [2017-07-11 15:17:08][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@59e84876: startup date [Tue Jul 11 15:17:04 CST 2017]; root of context hierarchy
+[INFO] [2017-08-09 15:31:44][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO] [2017-08-09 15:31:44][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@59e84876: startup date [Wed Aug 09 15:31:44 CST 2017]; root of context hierarchy
+[INFO] [2017-08-09 15:31:44][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+[INFO] [2017-08-09 15:31:44][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] [2017-08-09 15:31:45][cary.TestMyBatis]get in testInsertComment
+[INFO] [2017-08-09 15:31:45][cary.TestMyBatis]get in testGetArticleById
+[INFO] [2017-08-09 15:31:45][com.cary.cwish.service.impl.ArticleServiceImpl]get in Article Service to get articles by id
+[INFO] [2017-08-09 15:31:45][cary.TestMyBatis]{"articleId":1,"date":1465955003000,"text":"绿蚁新醅酒，红泥小火炉。晚来天欲雪，能饮一杯无？<br/><br/>\n外面是白色的，屋内是橘黄色。<br/>\n缩着头下楼买两个烤红薯，左手换到右手，哈着白气跑上楼。<br/>\n下厨整两热菜，配上一小碟茴香豆。<br/>\n有故事有酒，有暖气有女朋友。<br/>\n桌下的小狗摇着尾巴，翘着首。<br/>","title":"你所期待的冬天是什么样子的？","userName":"Cary@qq.com"}
+[INFO] [2017-08-09 15:31:45][cary.TestMyBatis]get in testGetArticles
+[INFO] [2017-08-09 15:31:45][com.cary.cwish.service.impl.ArticleServiceImpl]get in Article Service to get 10 articles
+[INFO] [2017-08-09 15:31:45][cary.TestMyBatis]{"articleId":20,"date":1499757427000,"text":"What a pity! I do not know what the story tells..","title":"This is an amazing story!!","userName":"Wulala"}
+[INFO] [2017-08-09 15:31:45][cary.TestMyBatis]{"articleId":19,"date":1467270273000,"text":"<div style=\"background:#eee;border:1px solid #ccc;padding:5px 10px;\"><span style=\"color:#0000FF\"><span style=\"font-size:14px\">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</span></span></div>","title":"喂喂喂喂喂喂","userName":"cary@qq.com"}
+[INFO] [2017-08-09 15:31:45][cary.TestMyBatis]{"articleId":18,"date":1467083058000,"text":"<p style=\"text-align: center;\">6/28</p>\r\n\r\n<p style=\"text-align: center;\"><span style=\"font-family:comic sans ms,cursive\"><span style=\"font-size:24px\"><span style=\"color:#FF8C00\">chkeditor是否是正常运行的呢？</span></span></span></p>","title":"6/28","userName":"cary@qq.com"}
+[INFO] [2017-08-09 15:31:45][cary.TestMyBatis]{"articleId":17,"date":1466648669000,"text":"What a pity! I do not know what the story tells..","title":"This is an amazing story!!","userName":"Wulala"}
+[INFO] [2017-08-09 15:31:45][cary.TestMyBatis]{"articleId":13,"date":1466475128000,"text":"<p>啊哈哈哈哈哈哈哈哈哈</p>","title":"又一个测试","userName":"cary@qq.com"}
+[INFO] [2017-08-09 15:31:45][cary.TestMyBatis]{"articleId":12,"date":1466474798000,"text":"<p>爱丽丝的解放垃圾地方</p>","title":"发的","userName":"cary@qq.com"}
+[INFO] [2017-08-09 15:31:45][cary.TestMyBatis]{"articleId":11,"date":1466150584000,"text":"<p>This article should not show up if user do not refresh the page.</p>","title":"Title 11","userName":"cary@qq.com"}
+[INFO] [2017-08-09 15:31:45][cary.TestMyBatis]{"articleId":10,"date":1466150535000,"text":"<p>text 10</p>","title":"title 10","userName":"cary@qq.com"}
+[INFO] [2017-08-09 15:31:45][cary.TestMyBatis]{"articleId":9,"date":1466150526000,"text":"<p>text 9</p>","title":"title 9","userName":"cary@qq.com"}
+[INFO] [2017-08-09 15:31:45][cary.TestMyBatis]{"articleId":8,"date":1466150516000,"text":"<p>text 8</p>","title":"title 8","userName":"cary@qq.com"}
+[INFO] [2017-08-09 15:31:45][cary.TestMyBatis]get in testInsertArticle
+[INFO] [2017-08-09 15:31:45][com.cary.cwish.service.impl.ArticleServiceImpl]get in insert article service
+[INFO] [2017-08-09 15:31:45][cary.TestMyBatis]1
+[INFO] [2017-08-09 15:31:45][cary.TestMyBatis]get in testGetArticleCount
+[INFO] [2017-08-09 15:31:45][com.cary.cwish.service.impl.ArticleServiceImpl]get in Article Service to get article count
+[INFO] [2017-08-09 15:31:45][cary.TestMyBatis]11
+[INFO] [2017-08-09 15:31:45][cary.TestMyBatis]get in testGetUserById
+[INFO] [2017-08-09 15:31:46][cary.TestMyBatis]{"age":24,"id":1,"password":"123456","userName":"Cary@qq.com"}
+[INFO] [2017-08-09 15:31:46][cary.TestMyBatis]get in testGetArticleComments
+[INFO] [2017-08-09 15:31:46][cary.TestMyBatis]Comments count: 1
+[INFO] [2017-08-09 15:31:46][cary.TestMyBatis]get in testGetArticlesByUserName
+[INFO] [2017-08-09 15:31:46][com.cary.cwish.service.impl.ArticleServiceImpl]get in Article Service to get articles by user name
+[INFO] [2017-08-09 15:31:46][cary.TestMyBatis]{"articleId":19,"date":1467270273000,"text":"<div style=\"background:#eee;border:1px solid #ccc;padding:5px 10px;\"><span style=\"color:#0000FF\"><span style=\"font-size:14px\">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</span></span></div>","title":"喂喂喂喂喂喂","userName":"cary@qq.com"}
+[INFO] [2017-08-09 15:31:46][cary.TestMyBatis]{"articleId":18,"date":1467083058000,"text":"<p style=\"text-align: center;\">6/28</p>\r\n\r\n<p style=\"text-align: center;\"><span style=\"font-family:comic sans ms,cursive\"><span style=\"font-size:24px\"><span style=\"color:#FF8C00\">chkeditor是否是正常运行的呢？</span></span></span></p>","title":"6/28","userName":"cary@qq.com"}
+[INFO] [2017-08-09 15:31:46][cary.TestMyBatis]{"articleId":13,"date":1466475128000,"text":"<p>啊哈哈哈哈哈哈哈哈哈</p>","title":"又一个测试","userName":"cary@qq.com"}
+[INFO] [2017-08-09 15:31:46][cary.TestMyBatis]{"articleId":12,"date":1466474798000,"text":"<p>爱丽丝的解放垃圾地方</p>","title":"发的","userName":"cary@qq.com"}
+[INFO] [2017-08-09 15:31:46][cary.TestMyBatis]{"articleId":11,"date":1466150584000,"text":"<p>This article should not show up if user do not refresh the page.</p>","title":"Title 11","userName":"cary@qq.com"}
+[INFO] [2017-08-09 15:31:46][cary.TestMyBatis]{"articleId":10,"date":1466150535000,"text":"<p>text 10</p>","title":"title 10","userName":"cary@qq.com"}
+[INFO] [2017-08-09 15:31:46][cary.TestMyBatis]{"articleId":9,"date":1466150526000,"text":"<p>text 9</p>","title":"title 9","userName":"cary@qq.com"}
+[INFO] [2017-08-09 15:31:46][cary.TestMyBatis]{"articleId":8,"date":1466150516000,"text":"<p>text 8</p>","title":"title 8","userName":"cary@qq.com"}
+[INFO] [2017-08-09 15:31:46][cary.TestMyBatis]{"articleId":7,"date":1466150504000,"text":"<p>Text 7</p>","title":"title 7","userName":"cary@qq.com"}
+[INFO] [2017-08-09 15:31:46][cary.TestMyBatis]{"articleId":6,"date":1466149474000,"text":"<p><span style=\"color:#FF8C00\"><span style=\"font-size:22px\"><span style=\"font-family:comic sans ms,cursive\">This is a test for write page.</span></span></span></p>\r\n\r\n<p><span style=\"color:#FF8C00\"><span style=\"font-size:22px\"><span style=\"font-family:comic sans ms,cursive\">To check insert function working correctly</span></span></span></p>","title":"test insert function","userName":"cary@qq.com"}
+[INFO] [2017-08-09 15:31:46][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@59e84876: startup date [Wed Aug 09 15:31:44 CST 2017]; root of context hierarchy

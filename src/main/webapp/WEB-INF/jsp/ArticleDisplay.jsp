@@ -12,7 +12,7 @@
 				<div class="col-md-1 col-md-offset-1">
 					<%=art.getUserName()%>
 				</div>
-				<div class="col-md-8"><a href=""><%=art.getTitle()%></a></div>
+				<div class="col-md-8 articleTitle"><a href=""><%=art.getTitle()%></a></div>
 			</div>
 			<div class="row-fluid">
 				<hr class="col-md-8 col-md-offset-2" />
